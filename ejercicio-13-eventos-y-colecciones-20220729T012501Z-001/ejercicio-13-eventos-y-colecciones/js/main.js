@@ -2,26 +2,22 @@
 function arbolListo (){
     console.log("Contenidos del DOM cargado.")
     
-    
-    let lista = document.getElementsByTagName('li')
     let body = document.querySelector('body')
     let textArea = document.querySelector("#origen")
     let areaValor = ""
     let p = document.createElement('p')
-    body.appendChild(p)
-    let contenido = ""
+    let strong = document.createElement('strong')
+    textArea.appendChild(p)
+    console.log(strong)
+
     function tomarValor (e){ 
+        
        areaValor = e.target.value
        console.log(areaValor)
        p.textContent = `Este contenido ${areaValor} está listo` 
-     
-/* 
-       agregar.addEventListener("click", function (e){
-        console.log(destino.innerHTML)
-        destino.textContent += areaValor  
-        console.dir(destino)
-    }) */
-           
+        body.appendChild(p)
+
+
        for(let i = 0; i < input.length; i++){
         input[i].disabled = false
         if (areaValor == ""){
@@ -32,17 +28,17 @@ function arbolListo (){
       
       
     }
+
     textArea.addEventListener("input", tomarValor)
     
     
 
     let input = document.getElementsByTagName('input')
     console.log(input)
-    let agregar = input[1]
-    console.log(agregar)
-    let agregar5 = input[2]
+    let agregar   = input[1]
+    let agregar5  = input[2]
     let agregar10 = input[3]
-    let agregarN = input[4]
+    let agregarN  = input[4]
  
     let destino = document.querySelector("#destino")
     let reemplazar = document.getElementById("btn-reemplazar")
@@ -86,15 +82,18 @@ function arbolListo (){
             minus.disabled = true
         })
 
-        console.log(lista[2])
-        let lista1 = lista[2]
-        console.dir(lista1)
+
+
+        const pt7 = '[Ok]'
+        const lista = document.getElementsByTagName('li')
+   
+        for(let i = 0; i < lista.length; i++){
+            let result = pt7 + lista[i].textContent
+            lista[i].textContent = result  
+       } 
+    
     }
     
-
-    
-    
- 
 document.addEventListener("DOMContentLoaded", arbolListo)
 
 
